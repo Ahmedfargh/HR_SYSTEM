@@ -83,7 +83,7 @@ body {
   .sidebar-collapse .content-wrapper,
   .sidebar-collapse .right-side,
   .sidebar-collapse .main-footer {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media (max-width: 767px) {
@@ -113,6 +113,7 @@ body {
 .fixed .main-sidebar,
 .fixed .left-side {
   position: fixed;
+  right: 0px;
 }
 .fixed .main-header {
   top: 0;
@@ -256,7 +257,7 @@ a:focus {
   }
 }
 .main-header .sidebar-toggle {
-  float: left;
+  float: right;
   background-color: transparent;
   background-image: none;
   padding: 15px 15px;
