@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::select("CREATE TABLE employees( name_ VARCHAR(128) NOT NULL, `id` INT NOT NULL AUTO_INCREMENT, gender VARCHAR(5), salary INT NOT NULL, phone VARCHAR(15) NOT NULL, email VARCHAR(30), create_at DATETIME DEFAULT NOW(), updated_at DATETIME DEFAULT NOW(), address VARCHAR(128) NOT NULL, PRIMARY KEY(id) );");
+        DB::select("CREATE TABLE employees( name_ VARCHAR(128) NOT NULL, `id` INT NOT NULL AUTO_INCREMENT, gender VARCHAR(10), salary INT NOT NULL, phone VARCHAR(15) NOT NULL, email VARCHAR(30), create_at DATETIME DEFAULT NOW(), updated_at DATETIME DEFAULT NOW(), address VARCHAR(128) NOT NULL, PRIMARY KEY(id) );");
     }
 
     /**

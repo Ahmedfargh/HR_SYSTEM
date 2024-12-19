@@ -39,12 +39,12 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
-            <div class="col-xs-8">    
+            <div class="col-xs-8">
               <div class="checkbox icheck">
                 <label>
                   <input type="checkbox"name="remember_me"> تذكرنى
                 </label>
-              </div>                        
+              </div>
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">الدخول</button>
@@ -53,11 +53,11 @@
         </form>
 
         <div class="social-auth-links text-center">
-          
+
         </div><!-- /.social-auth-links -->
 
         <!----<a href="#">I forgot my password</a><br>--->
-        
+
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

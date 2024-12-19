@@ -8,3 +8,6 @@
     <script src="{{asset('plugins/fastclick/fastclick.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/app.min.js')}}" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="{{asset('dist/ajax.js')}}"></script>
