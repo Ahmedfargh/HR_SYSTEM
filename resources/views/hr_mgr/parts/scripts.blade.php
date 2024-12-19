@@ -11,3 +11,4 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="{{asset('dist/ajax.js')}}"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
