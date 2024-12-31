@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Department;
+use Illuminate\Support\Facades\DB;
 class DepartmentController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class DepartmentController extends Controller
     {
         //
         
-        return view("hr_mgr.division_index");
+        return view("hr_mgr.division_index",[
+            "departments"=>DB::table("departments")->join("employees","departments.super_visisor","=","employees.id")->select("departments.*","employees.name_")->get(),
+        ]);
     }
 
     /**

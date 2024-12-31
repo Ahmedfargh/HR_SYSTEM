@@ -26,6 +26,7 @@
             
           </div>
           @include('hr_mgr.parts.add_departments')
+          @include("hr_mgr.parts.departments")
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
