@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HRController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\punishmentController;
+use App\Http\Controllers\DepartmentController;
 Route::get('/', function () {
     return view('hr_mgr/login');
 });
@@ -16,4 +17,7 @@ Route::post("/Employee/Update",[employeeController::class,"update"])->name(name:
 Route::get("/Employee/Delete/{id}",[employeeController::class,"delete"])->name("delete_employee");
 Route::post("/Employee/sign/punishment",[punishmentController::class,"Register_punishment_perc"])->name("sign_punish_days");
 Route::post("/Employee/sign/punishment/fee",[punishmentController::class,"Register_punishment_perc"])->name("sign_punish_fee");
-
+Route::group(["prefix","/department"],function(){
+    Route::get("/index",[DepartmentController::class,"index"])->name("department_index");
+    Route::post("/index/add",[DepartmentController::class,"create"])->name("add_department");
+});

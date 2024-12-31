@@ -26,7 +26,12 @@
           <ul class="sidebar-menu">
             <li class="active treeview">
               <a href="{{route('employee_management')}}">
-                <i class="fa fa-dashboard"></i> <span>الموظفيين</span> <i class="fa fa-angle-left pull-right"></i>
+                 <span>الموظفيين</span>
+              </a>
+            </li>
+            <li class="trewwview">
+              <a href="{{route('department_index')}}">
+                <span>الادارات</span>
               </a>
             </li>
           </ul>       
