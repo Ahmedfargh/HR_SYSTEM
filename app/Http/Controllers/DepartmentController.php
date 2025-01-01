@@ -15,7 +15,7 @@ class DepartmentController extends Controller
         //
         
         return view("hr_mgr.division_index",[
-            "departments"=>DB::table("departments")->join("employees","departments.super_visisor","=","employees.id")->select("departments.*","employees.name_")->get(),
+            "departments"=>Department::All(),
         ]);
     }
 
@@ -54,9 +54,14 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $req,$id)
     {
         //
+        Department::find($id)->update([
+            "name"=>$req->input("dep_name"),
+            "super_visisor"=>$req->input("super_visisor"),
+        ]);
+        return true;
     }
 
     /**
@@ -70,8 +75,9 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $req,$id)
     {
         //
+        return Department::find($id)->delete();
     }
 }

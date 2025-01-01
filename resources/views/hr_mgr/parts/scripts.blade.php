@@ -12,3 +12,4 @@
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="{{asset('dist/ajax.js')}}"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

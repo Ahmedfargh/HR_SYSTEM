@@ -17,7 +17,9 @@ Route::post("/Employee/Update",[employeeController::class,"update"])->name(name:
 Route::get("/Employee/Delete/{id}",[employeeController::class,"delete"])->name("delete_employee");
 Route::post("/Employee/sign/punishment",[punishmentController::class,"Register_punishment_perc"])->name("sign_punish_days");
 Route::post("/Employee/sign/punishment/fee",[punishmentController::class,"Register_punishment_perc"])->name("sign_punish_fee");
-Route::group(["prefix","/department"],function(){
+Route::group(["prefix"=>"/department"],function(){
     Route::get("/index",[DepartmentController::class,"index"])->name("department_index");
     Route::post("/index/add",[DepartmentController::class,"create"])->name("add_department");
+    Route::get("/index/delete/{id}",[DepartmentController::class,"destroy"])->name("delete_department_action");
+    Route::get("/index/update/{id}",[DepartmentController::class,"edit"])->name("update_department_action");
 });
