@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::select("CREATE TABLE ATTENDANCE(check_in datetime default now(),check_out datetime default now(),employee int not null,created_at datetime default now(),updated_at datetime default now() ,foreign key(employee)references employees(id)on delete cascade on update cascade);");
+        DB::select("CREATE TABLE ATTENDANCE(check_in datetime default now(),check_out datetime default now(),employee_id int not null,created_at datetime default now(),updated_at datetime default now() ,foreign key(employee)references employees(id)on delete cascade on update cascade);");
     }
 
     /**

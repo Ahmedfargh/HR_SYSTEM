@@ -84,8 +84,18 @@
               </div>
             </div>
           </div>
+          
         </div>
-
+        <div class="box col-12">
+          <div class="box-body">
+            @include('hr_mgr.parts.employeee_attendance')
+          </div>
+        </div>
+        <div class="box col-12">
+          <div class="box-body">
+            @include('hr_mgr.parts.employee_punishments')
+          </div>
+        </div>
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
