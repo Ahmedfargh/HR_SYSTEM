@@ -35,4 +35,9 @@ class employeeController extends Controller
         Employee::destroy($id);
         return redirect("/register/employee");
     }
+    public function show(Request $req,$id){
+        return view("hr_mgr.employee_page",[
+            "employee"=>Employee::find($id)
+        ]);
+    }
 }

@@ -30,38 +30,38 @@
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('register_employee') }}" method="post"class="row">
+                            <form action="{{ route('register_employee') }}" method="post" class="row">
                                 @csrf
                                 <div class="input-group col-4">
-                                    <input type="text" class="form-control"name="name" placeholder="اسم الموظف"
-                                        aria-describedby="basic-addon1"required>
+                                    <input type="text" class="form-control" name="name" placeholder="اسم الموظف"
+                                        aria-describedby="basic-addon1" required>
                                     <span class="input-group-text" id="basic-addon1">اسم الموظف</span>
                                 </div>
                                 <div class="input-group col-4">
-                                    <select name="gender" id="" class="form-control"required>
+                                    <select name="gender" id="" class="form-control" required>
                                         <option value="male">ذكر</option>
                                         <option value="female">انثى</option>
                                     </select>
                                     <span class="input-group-text" id="basic-addon1">جنس الموظف</span>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="number" name="salary" id="" class="form-control"required>
+                                    <input type="number" name="salary" id="" class="form-control" required>
                                     <span class="input-group-text" id="basic-addon1">راتب الموظف</span>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="phone" name="phone" id="" class="form-control"required>
+                                    <input type="phone" name="phone" id="" class="form-control" required>
                                     <span class="input-group-text" id="basic-addon1">هاتف الموظف</span>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="email" name="email" id="" class="form-control"required>
+                                    <input type="email" name="email" id="" class="form-control" required>
                                     <span class="input-group-text" id="basic-addon1">البريد الالكترونى الموظف</span>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="address" id=""class="form-control" required>
+                                    <input type="text" name="address" id="" class="form-control" required>
                                     <span class="input-group-text">عنوان الموظف</span>
                                 </div>
                                 <div class="col-4">
-                                    <button type="submit"class="btn btn-success"><i
+                                    <button type="submit" class="btn btn-success"><i
                                             class="fa-solid fa-plus"></i></button>
                                     <button type="reset" class="btn btn-warning"><i
                                             class="fa-duotone fa-solid fa-xmark"></i></button>
@@ -75,7 +75,7 @@
                             <h3>الموظفيين</h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped"id="employee_data">
+                            <table class="table table-striped" id="employee_data">
                                 <thead>
                                     <td>
                                         البريد الالكترونى
@@ -98,39 +98,42 @@
                                 </thead>
                                 <tbody>
                                     @foreach (App\Models\Employee::all()->toArray() as $emp)
-                                        <tr>
-                                            <td>
-                                                {{ $emp['address'] }}
-                                            </td>
-                                            <td>
-                                                {{ $emp['email'] }}
-                                            </td>
-                                            <td>
-                                                {{ $emp['salary'] }}
-                                            </td>
-                                            <td>
-                                                {{ $emp['phone'] }}
-                                            </td>
-                                            <td>
-                                                {{ $emp['gender'] }}
-                                            </td>
-                                            <td>
-                                                {{ $emp['name_'] }}
-                                            </td>
-                                            <td>
-                                                {{ $emp['id'] }}
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-success">
-                                                    <i
-                                                        class="fa-solid fa-gear"onclick='update_dialog(@json($emp))'></i>
-                                                </button>
-                                                <button class="btn btn-danger"onclick="discount_employee({{$emp['id']}})"><i class="fa-solid fa-percent"></i></button>
-                                                <a
-                                                    class="btn btn-danger"href="{{ route('delete_employee', $emp['id']) }}"><i
-                                                        class="fa-regular fa-trash-can"></i></a>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>
+                                            {{ $emp['address'] }}
+                                        </td>
+                                        <td>
+                                            {{ $emp['email'] }}
+                                        </td>
+                                        <td>
+                                            {{ $emp['salary'] }}
+                                        </td>
+                                        <td>
+                                            {{ $emp['phone'] }}
+                                        </td>
+                                        <td>
+                                            {{ $emp['gender'] }}
+                                        </td>
+                                        <td>
+                                            {{ $emp['name_'] }}
+                                        </td>
+                                        <td>
+                                            {{ $emp['id'] }}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success">
+                                                <i class="fa-solid fa-gear" onclick='update_dialog(@json($emp))'></i>
+                                            </button>
+                                            <button class="btn btn-danger"
+                                                onclick="discount_employee({{$emp['id']}})"><i
+                                                    class="fa-solid fa-percent"></i></button>
+                                            <a class="btn btn-danger"
+                                                href="{{ route('delete_employee', $emp['id']) }}"><i
+                                                    class="fa-regular fa-trash-can"></i></a>
+                                            <a class="btn btn-danger"
+                                                href="{{route('show_employee',$emp['id'])}}"><i class="fa-solid fa-user fa-beat"></i></a>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>

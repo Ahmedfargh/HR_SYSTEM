@@ -36,7 +36,7 @@
                     {{$dep->id}}
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary"onclick="preprare_to_update({{$dep->id}},{{$dep->super_visisor}},'{{$dep->name}}')"><i class="fa-duotone fa-solid fa-gear"></i></button>
+                    <button type="button" class="btn btn-primary"onclick="preprare_to_update({{$dep->id}},{{$dep->super_visisor?$dep->super_visior:0}},'{{$dep->name}}')"><i class="fa-duotone fa-solid fa-gear"></i></button>
                     <button type="button" class="btn btn-danger" onclick="delete_department({{$dep->id}})"><i
                             class="fa-solid fa-trash"></i>
                         </button>
