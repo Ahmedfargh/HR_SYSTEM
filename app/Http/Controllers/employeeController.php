@@ -25,7 +25,7 @@ class employeeController extends Controller
             "address"=>$req->input("address"),
             "salary"=>$req->input("salary"),
             "phone"=>$req->input("phone"),
-            "email"=>$req->input("phone"),
+            "email"=>$req->input("email"),
             "gender"=>$req->input("gender")
         ]);
         return redirect("/register/employee");

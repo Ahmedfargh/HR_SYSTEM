@@ -13,7 +13,7 @@ Route::get("/register/employee",function(){
     return view("hr_mgr.employee");
 })->name("employee_management");
 
-Route::group(["prefix"=>"Employee"],function(){
+Route::group(["prefix"=>"/Employee"],function(){
     Route::post("/Register",[employeeController::class,"register"])->name("register_employee");
     Route::post("/Update",[employeeController::class,"update"])->name("update_employe");
     Route::get("/Delete/{id}",[employeeController::class,"delete"])->name("delete_employee");
