@@ -34,6 +34,10 @@
                 <span>الادارات</span>
               </a>
             </li>
+            <li class="treeview">
+              <a href="{{route('candidate_index')}}">
+                <span>مرشحين</span>
+              </a>
           </ul>       
                       
             

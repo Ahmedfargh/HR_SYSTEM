@@ -17,7 +17,7 @@ class HRController extends Controller
             return view("hr_mgr.index",[
                 "user"=>Auth::user(),
                 "employees"=>Employee::All(),
-                "attendance"=>DB::select("select  employees.* ,attendance.* from attendance join employees where DAY(attendance.check_in)=DAY(now()) and attendance.employee=employees.id ")
+                "attendance"=>DB::select("select  employees.* ,attendance.* from attendance join employees where DAY(attendance.check_in)=DAY(now()) and attendance.employee_id=employees.id ")
             ]);
         }else{
             return view("hr_mgr.login");
