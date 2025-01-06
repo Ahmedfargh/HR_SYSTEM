@@ -56,15 +56,15 @@
               </thead>
               <tbody>
                 @foreach($candidates as $candidate)
-                <tr>
+                <tr id="candidate_{{$candidate->id}}">
                  
                   <td>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#editCandidate"><i
                         class="fa-duotone fa-solid fa-edit"></i></button>
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteCandidate"><i
+                    <button class="btn btn-danger" data-toggle="modal"onclick="delete_candidate({{$candidate->id}});" data-target="#deleteCandidate"><i
                         class="fa-duotone fa-solid fa-trash"></i></button>
                   </td>
-                  <td>{{ $candidate->resume }}</td>
+                  <td><a href="{{ asset($candidate->resume) }}">السيره الذاتيه</a></td>
                   <td>{{ $candidate->email }}</td>
                   <td>{{ $candidate->phone }}</td>
                   <td>{{ $candidate->Positions->title }}</td>
@@ -78,28 +78,29 @@
           </div><!-- /.box-body -->
           <div class="box-footer">
             <div id="adding_candidate">
-              <form class="row" action="" method="post"enctype="">
+              <form class="row" action="{{route('add_candidate')}}" method="post"enctype="multipart/form-data">
+                @csrf
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="الاسم"  aria-describedby="basic-addon2">
+                    <input type="text" class="form-control" name='name'placeholder="الاسم"  aria-describedby="basic-addon2">
                     <span class="input-group-text" id="basic-addon2">اسم المرشح</span>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <div class="input-group mb-3">
-                    <input type="tel" class="form-control" placeholder="الهاتف" aria-describedby="basic-addon2">
+                    <input type="tel" class="form-control"name='phone' placeholder="الهاتف" aria-describedby="basic-addon2">
                     <span class="input-group-text" id="basic-addon2">الهاتف</span>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="البريد الالكترونى" aria-describedby="basic-addon2">
+                    <input type="email" class="form-control"name="email" placeholder="البريد الالكترونى" aria-describedby="basic-addon2">
                     <span class="input-group-text" id="basic-addon2">البريد الالكترونى</span>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <div class="input-group mb-3">
-                    <select name="status" id=""name="pending" class="form-control" aria-describedby="basic-addon2">
+                    <select name="status" id=""name="status" class="form-control" aria-describedby="basic-addon2">
                       <option value="pending">معلق</option>
                       <option value="accepted">مقبول</option>
                       <option value="rejected">مرفوض</option>
@@ -113,7 +114,7 @@
                     @php
                     $positions = App\Models\Positions::all();
                     @endphp
-                    <select name="position" id=""name="pending" class="form-control" aria-describedby="basic-addon2">
+                    <select  id=""name="position_id" class="form-control" aria-describedby="basic-addon2">
                       @foreach($positions as $position)
                       <option value="{{ $position->id }}">{{ $position->title }}</option>
                       @endforeach
@@ -123,9 +124,12 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                   <div class="input-group mb-3">
-                    <input type="file" name="cv_pdf" id="cv"accept=".pdf" required>
+                    <input type="file" name="cv" id="cv"accept=".pdf" required>
                     <span class="input-group-text" id="basic-addon2" >السيره الذاتيه *.pdf فقط</span>
                   </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <button type="submit" class="btn btn-primary">اضافه</button>
                 </div>
               </form>
             </div>
@@ -144,5 +148,13 @@
   $("#addCandidate").click(function(){
     $("#adding_candidate").toggle();
   });
+  function delete_candidate(id){
+    var url = "{{route('delete_candidate',':id')}}";
+    url = url.replace(':id',id);
+    console.log(url);
+    axios.get(url).then(response=>{
+      $("#candidate_"+id).remove();
+    });
+  }
 </script>
 </html>

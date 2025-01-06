@@ -31,5 +31,6 @@ Route::group(["prefix"=>"/department"],function(){
 });
 Route::group(["prefix"=>"/candidate"],function(){
     Route::get("/index",[candidateController::class,"index"])->name("candidate_index");
-   
+    Route::post("/index/add",[candidateController::class,"create"])->name("add_candidate");
+    Route::get("/index/delete/{id}",[candidateController::class,"delete"])->name("delete_candidate");
 });
