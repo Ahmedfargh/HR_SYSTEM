@@ -5,7 +5,7 @@ use App\Http\Controllers\HRController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\punishmentController;
 use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\PositionController;
+use App\Http\Controllers\positionControllers;
 use App\Http\Controllers\candidateController;
 Route::get('/', function () {
     return view('hr_mgr/login');
@@ -33,4 +33,8 @@ Route::group(["prefix"=>"/candidate"],function(){
     Route::get("/index",[candidateController::class,"index"])->name("candidate_index");
     Route::post("/index/add",[candidateController::class,"create"])->name("add_candidate");
     Route::get("/index/delete/{id}",[candidateController::class,"delete"])->name("delete_candidate");
+});
+Route::group(["prefix"=>"/position"],function(){
+    Route::get("/index",[positionControllers::class,"index"])->name("position_index");
+   
 });

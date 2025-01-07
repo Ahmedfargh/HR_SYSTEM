@@ -38,6 +38,12 @@
               <a href="{{route('candidate_index')}}">
                 <span>مرشحين</span>
               </a>
+            </li>
+            <li class="treeview">
+              <a href="{{route('position_index')}}">
+                <span>المناصب</span>
+              </a>
+            </li>
           </ul>       
                       
             
