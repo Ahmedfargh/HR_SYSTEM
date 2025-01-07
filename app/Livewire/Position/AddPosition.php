@@ -11,7 +11,7 @@ class AddPosition extends Component
     public $department;
     public $salary;
     public $title;
-    
+    public $position_id;
     public function create(){
         $this->validate([
             "description"=>"required",

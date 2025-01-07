@@ -4,10 +4,15 @@ namespace App\Livewire\Position;
 
 use Livewire\Component;
 use App\Models\Positions;
+use Livewire\WithPagination;
+use Illuminate\Support\Facades\DB;
+
 class PositionTable extends Component
 {
+    use WithPagination;
     public $positions;
-    protected $listeners = ['refresh_position_tabel' => 'refresh_table'];
+    public $search_text;
+    
     public function handleMessage($message){
         session()->flash('message', $message);
     }
@@ -16,14 +21,19 @@ class PositionTable extends Component
         session()->flash('message', 'تمم عمليه الحذف بنجاح');
         $this->positions=Positions::all();
     }
+    public function search(){
+        $this->resetPage();
+        session()->flash('message', 'تمم عمليه الحذف بنجاح');
+        $this->positions=Positions::where('title','like','%'.$this->search_text.'%')->get();
+    }
     public function refresh_table(){
         $this->positions=Positions::all();
     }
     public function render()
     {
-        $this->positions=Positions::all();
+        $this->positions = Positions::with('department') ->where('title', 'like', '%' . $this->search_text . '%')->get();
         return view('livewire.position.position-table',[
-            "positions"=>$this->positions
+            "positions"=> $this->positions,
         ]);
     }
 }

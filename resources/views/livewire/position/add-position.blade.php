@@ -26,6 +26,7 @@
             </select>
             <label for="department_id"class="input-group-text">الاداره</label>
         </div>
+        <input type="hidden" name="id" id="id" wire:model="position_id">
         <div class="input-group col-lg-3 col-md-3 col-xs-12 col-sm-12">
             <button class="btn btn-primary" wire:click="create">اضافه</button>
         </div>
