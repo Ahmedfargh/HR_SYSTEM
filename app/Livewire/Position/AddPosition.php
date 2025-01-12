@@ -30,6 +30,7 @@ class AddPosition extends Component
         $this->department="";
         $this->salary="";
         $this->title="";
+        $this->dispatch("refreshPositions");
     }
     public function render()
     {

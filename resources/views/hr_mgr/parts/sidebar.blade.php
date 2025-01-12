@@ -44,6 +44,11 @@
                 <span>المناصب</span>
               </a>
             </li>
+            <li class="treeview">
+              <a href="{{route('permissions_roles_index')}}">
+                <span>الاذونات و الادوار</span>
+              </a>
+            </li>
           </ul>       
                       
             

@@ -24,7 +24,7 @@ class CandidateController extends Controller
                 "name"=>"required",
                 "email"=>"required",
                 "phone"=>"required",
-                "position_id"=>"required",
+                "positions_id"=>"required",
                 "cv"=>"required|file|mimes:pdf",
             ]);
             $candidate = new candidate_recruitment();
@@ -41,7 +41,6 @@ class CandidateController extends Controller
             $candidate->save();
             return redirect()->route('candidate_index');
         }catch(ValidationException $e){
-            dd($e->errors());
             return redirect()->back()->withErrors($e->errors());
         }
         return view('hr_mgr.add_candidate', ["positions"=>$positions]);

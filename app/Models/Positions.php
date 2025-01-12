@@ -32,6 +32,6 @@ class Positions extends Model
     }
     public function searchableAs()
     {
-        return 'index';
+        return 'position_index';
     }
 }
