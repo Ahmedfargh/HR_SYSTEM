@@ -23,7 +23,7 @@
       <!-- Main content -->
       <section class="content">
         <livewire:permissions.add-permission />
-
+        <livewire:permissions.table/>
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

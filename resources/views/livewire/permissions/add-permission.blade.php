@@ -1,4 +1,4 @@
-<div class="box col-lg-12 col-md-12 col-xs-12 col-sm-12 container">
+<div class="box col-lg-12 col-md-12 col-xs-12 col-sm-12">
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session('message') }}

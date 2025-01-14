@@ -14,6 +14,7 @@ return new class extends Migration
         //
         DB::select("alter table users add column role_id bigint(20)unsigned default null");
         DB::select("alter table users add foreign key(role_id) references roles(id)");
+        DB::select("ALTER TABLE `hr_manager`.`role_has_permissions` ADD COLUMN `created_at` DATETIME NULL DEFAULT now() AFTER `role_id`,ADD COLUMN `updated_at` DATETIME NULL DEFAULT now() AFTER `created_at`;");
     }
 
     /**

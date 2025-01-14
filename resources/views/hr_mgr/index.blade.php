@@ -27,7 +27,7 @@
 
         </div>
 
-          <div class="box col-lg-12 col-md-12 col-xs-12 col-sm-12 container">
+          <div class="box col-lg-12 col-md-12 col-xs-12 col-sm-12">
             <div class="box-header text-center">
               <h3 class="box-title">الموظفين الحاضرون اليوم</h3>
               <div class="box-tools pull-right">

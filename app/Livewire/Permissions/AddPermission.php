@@ -31,6 +31,7 @@ class AddPermission extends Component
             $this->selected_names = [];
             $this->selected_permissions = null;
             session()->flash("message","تمت عمليه اضافه ");
+            $this->dispatch("refreshTable");
         }catch(\Exception $e){
             dd($e);
         }
