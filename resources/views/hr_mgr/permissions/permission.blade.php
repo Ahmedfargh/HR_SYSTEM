@@ -22,8 +22,11 @@
 
       <!-- Main content -->
       <section class="content">
-        <livewire:permissions.add-permission />
-        <livewire:permissions.table/>
+        <div class="row container-fluid">
+          <livewire:permissions.add-permission />
+          <livewire:permissions.assign-role />
+          <livewire:permissions.table wire:poll.1s />
+        </div>
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

@@ -2,13 +2,12 @@
     {{-- The whole world belongs to you. --}}
     {{-- Do your work, then step back. --}}
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-primary" id="ui_modal">
         <i class="fa-solid fa-grip-lines"></i>
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        >
+    <div id="exampleModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -16,7 +15,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <select name="" id="" class="form-control"multiple>
+                    <select name="" id="" class="form-control" multiple>
                         @foreach ( $data as $permission )
                         <option value="">{{$permission}}</option>
                         @endforeach
@@ -28,5 +27,12 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
+<script>
+    $("#exampleModal").hide();
+    $("#ui_modal").on("click",function(){
+        $("#exampleModal").dialog({ title: "Custom Dialog Title",modal:true,position:{my:"center",at:"center",of:window}});
+    });
+</script>

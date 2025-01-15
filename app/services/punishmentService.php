@@ -27,7 +27,7 @@ class PunishmentService
         if($type=="day_punish"){
             return ($emp->salary/30)*$punishment_perc;
         }else if($type=="broken_or_fee"){
-            return total;
+            return $total_;
         }
     }
 }
