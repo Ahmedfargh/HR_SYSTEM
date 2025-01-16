@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Scout\Searchable;
 use App\Models\role;
+use App\Models\Employee;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -61,5 +62,8 @@ class User extends Authenticatable
     }
     public function assignRole(){
         
+    }
+    public function getEmployeeData(){
+        return $this->hasOne(Employee::class);
     }
 }

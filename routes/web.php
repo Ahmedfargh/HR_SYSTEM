@@ -45,3 +45,6 @@ Route::group(["prefix"=>"permissions_roles"],function(){
     Route::get("/index",[PermissionRolesController::class,"index"])->name("permissions_roles_index");
     
 });
+Route::group(["prefix"=>"User"],function(){
+    Route::get("/account",[HRController::class,"getUserPage"])->name("getUserPage");
+});

@@ -3,50 +3,56 @@
         <section class="sidebar">
           <!-- Sidebar user panel -->
           <div class="user-panel">
-            <div class="pull-left image">
-              <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+            <div class="pull-left image ">
+              <img src="../../dist/img/user2-160x160.jpg" class="img-circle d-block mx-auto" alt="{{auth()->user()->name}}" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p>{{auth()->user()->name}}</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
+          
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="active treeview">
+            @if(is_allowed("view_employees"))
+            <li class="treeview text-center">
               <a href="{{route('employee_management')}}">
-                 <span>الموظفيين</span>
+                <i class="fa-solid fa-users"></i>
               </a>
             </li>
-            <li class="trewwview">
+            @endif
+            @if(is_allowed("view_departments"))
+            <li class="trewwview text-center">
               <a href="{{route('department_index')}}">
-                <span>الادارات</span>
+                <i class="fa-solid fa-section"></i>
               </a>
             </li>
-            <li class="treeview">
+            @endif
+            @if(is_allowed("view_candidates"))
+            <li class="treeview text-center">
               <a href="{{route('candidate_index')}}">
-                <span>مرشحين</span>
+                <i class="fa-solid fa-filter-circle-dollar"></i>              
               </a>
             </li>
-            <li class="treeview">
+            @endif
+            @if(is_allowed("view_positions"))
+            <li class="treeview text-center">
               <a href="{{route('position_index')}}">
-                <span>المناصب</span>
+                <i class="fa-solid fa-user-tie"></i>              
               </a>
             </li>
-            <li class="treeview">
+            @endif
+            @if(is_allowed("view_permissions"))
+            <li class="treeview text-center">
               <a href="{{route('permissions_roles_index')}}">
-                <span>الاذونات و الادوار</span>
+                <i class="fa-solid fa-user-gear"></i>
+              </a>
+            </li>
+            @endif
+            <li class="treeview text-center">
+              <a href="{{route('getUserPage')}}">
+                <i class="fa-solid fa-user"></i>
               </a>
             </li>
           </ul>       

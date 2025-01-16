@@ -23,5 +23,8 @@ class HRController extends Controller
             return view("hr_mgr.login");
         }
     }
+    public function getUserPage(){
+        return view("hr_mgr.HrAccount");
+    }
 
 }
