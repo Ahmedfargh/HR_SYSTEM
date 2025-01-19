@@ -18,27 +18,31 @@
             @if(is_allowed("view_employees"))
             <li class="treeview text-center">
               <a href="{{route('employee_management')}}">
-                <i class="fa-solid fa-users"></i>
+                الموظفين
+                <i class="fa-solid fa-users"title="الموظفين"></i>
               </a>
             </li>
             @endif
             @if(is_allowed("view_departments"))
             <li class="trewwview text-center">
               <a href="{{route('department_index')}}">
-                <i class="fa-solid fa-section"></i>
+                الادارات
+                <i class="fa-solid fa-section"title="الادارات"></i>
               </a>
             </li>
             @endif
             @if(is_allowed("view_candidates"))
             <li class="treeview text-center">
               <a href="{{route('candidate_index')}}">
-                <i class="fa-solid fa-filter-circle-dollar"></i>              
+                المرشحين
+                <i class="fa-solid fa-filter-circle-dollar"title="المرشحين"></i>              
               </a>
             </li>
             @endif
             @if(is_allowed("view_positions"))
             <li class="treeview text-center">
               <a href="{{route('position_index')}}">
+                المناصب
                 <i class="fa-solid fa-user-tie"></i>              
               </a>
             </li>
@@ -46,12 +50,14 @@
             @if(is_allowed("view_permissions"))
             <li class="treeview text-center">
               <a href="{{route('permissions_roles_index')}}">
+                الاذونات
                 <i class="fa-solid fa-user-gear"></i>
               </a>
             </li>
             @endif
             <li class="treeview text-center">
               <a href="{{route('getUserPage')}}">
+                الحساب الشخصى
                 <i class="fa-solid fa-user"></i>
               </a>
             </li>

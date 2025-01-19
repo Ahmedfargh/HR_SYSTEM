@@ -37,7 +37,7 @@ class employeeController extends Controller
     }
     public function show(Request $req,$id){
         return view("hr_mgr.employee_page",[
-            "employee"=>Employee::find($id)
+            "employee"=>Employee::find($id)        
         ]);
     }
 }

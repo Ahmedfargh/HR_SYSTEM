@@ -80,22 +80,33 @@
                 </div>
                 <input type="hidden" name="id" value="{{$employee->id}}">
                 @csrf
-                <button class="btn btn-success col-4 ml-3"id="save_btn"><i class="fa-solid fa-upload"></i></button>
+                <button class="btn btn-success col-4 ml-3" id="save_btn"><i class="fa-solid fa-upload"></i></button>
               </div>
             </div>
           </div>
-          
-        </div>
-        <div class="box col-12">
-          <div class="box-body">
-            @include('hr_mgr.parts.employeee_attendance')
+          <div class="box col-12">
+            <div class="box-body">
+              @include('hr_mgr.parts.employeee_attendance')
+            </div>
+          </div>
+          <div class="box col-12">
+            <div class="box-body">
+              @include('hr_mgr.parts.employee_punishments')
+            </div>
+          </div>
+          <div class="box col-12">
+            <div class="box-body">
+              <livewire:personals.write-reports :employee="$employee"/>
+
+            </div>
+          </div>
+          <div class="box col-12">
+            <div class="box-body">
+              <livewire:personals.reports :employee="$employee" />
+            </div>
           </div>
         </div>
-        <div class="box col-12">
-          <div class="box-body">
-            @include('hr_mgr.parts.employee_punishments')
-          </div>
-        </div>
+
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
@@ -132,4 +143,5 @@
     });
   });
 </script>
+
 </html>
