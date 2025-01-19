@@ -16,7 +16,7 @@ class WriteReports extends Component
         $performance->notes=$this->comment;
         $performance->save();
         session()->flash("recording_reports","inserting new records");
-
+        
     }
     public function render()
     {
