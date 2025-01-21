@@ -8,6 +8,7 @@ class Reports extends Component
 {
     public $employee;
     public $reports;
+    protected $listeners=["add_reports"=>"refresh"];
     public function refresh(){
         $this->reports=$this->employee->PerformanceReport;
     }
