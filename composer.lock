@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "0b14aab4633afe3186de2ac0d49514c6",
+=======
+    "content-hash": "cce6022404d45515907c625ca949c664",
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
     "packages": [
         {
             "name": "brick/math",
@@ -1113,6 +1117,7 @@
             "time": "2021-07-21T13:50:14+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laminas/laminas-diactoros",
             "version": "3.5.0",
             "source": {
@@ -1201,6 +1206,8 @@
             "time": "2024-10-14T11:59:49+00:00"
         },
         {
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
             "name": "laravel/framework",
             "version": "v11.34.2",
             "source": {
@@ -1745,6 +1752,7 @@
             "time": "2024-09-23T13:32:56+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "lcobucci/clock",
             "version": "2.3.0",
             "source": {
@@ -1885,6 +1893,8 @@
             "time": "2021-09-28T19:18:28+00:00"
         },
         {
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
             "name": "league/commonmark",
             "version": "2.6.0",
             "source": {
@@ -3981,6 +3991,7 @@
             "time": "2024-11-08T18:45:41+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "stella-maris/clock",
             "version": "0.1.7",
             "source": {
@@ -4028,6 +4039,8 @@
             "time": "2022-11-25T16:15:06+00:00"
         },
         {
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
             "name": "symfony/clock",
             "version": "v7.2.0",
             "source": {
@@ -6309,6 +6322,7 @@
             "time": "2023-12-08T13:03:43+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "twilio/sdk",
             "version": "8.3.12",
             "source": {
@@ -6362,6 +6376,8 @@
             "time": "2025-01-13T11:49:32+00:00"
         },
         {
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
             "name": "vlucas/phpdotenv",
             "version": "v5.6.1",
             "source": {
@@ -6520,6 +6536,7 @@
             "time": "2024-11-21T01:49:47+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "vonage/client",
             "version": "4.1.1",
             "source": {
@@ -6690,6 +6707,8 @@
             "time": "2023-02-14T15:54:06+00:00"
         },
         {
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
             "name": "webmozart/assert",
             "version": "1.11.0",
             "source": {

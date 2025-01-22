@@ -18,9 +18,13 @@
         "livewire/livewire": "^3.5",
         "maatwebsite/excel": "^1.1",
         "meilisearch/meilisearch-php": "^1.12",
+<<<<<<< HEAD
         "spatie/laravel-permission": "^6.10",
         "twilio/sdk": "^8.3",
         "vonage/client": "^4.1"
+=======
+        "spatie/laravel-permission": "^6.10"
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

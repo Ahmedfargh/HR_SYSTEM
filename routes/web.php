@@ -10,9 +10,12 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\positionControllers;
 use App\Http\Controllers\candidateController;
 use App\Http\Controllers\PermissionRolesController;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Mail;
 use App\Mail\employeeAdded;
 use Twilio\Rest\Client;
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
 Route::get('/', function () {
     return view('hr_mgr/login');
 });
@@ -50,4 +53,8 @@ Route::group(["prefix"=>"permissions_roles"],function(){
 });
 Route::group(["prefix"=>"User"],function(){
     Route::get("/account",[HRController::class,"getUserPage"])->name("getUserPage");
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb

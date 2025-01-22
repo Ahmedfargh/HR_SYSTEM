@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Employee;
+<<<<<<< HEAD
 use App\Jobs\sendAddingEmpsms;
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
 class employeeController extends Controller
 {
     //
@@ -18,7 +21,10 @@ class employeeController extends Controller
             "gender"=>$req->input("gender"),
             "address"=>$req->input("address")
         ]);
+<<<<<<< HEAD
         sendAddingEmpsms::dispatch($employee);
+=======
+>>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
         return redirect("/register/employee");
     }
     public function update(Request $req){
