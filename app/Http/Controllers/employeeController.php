@@ -8,6 +8,9 @@ use App\Models\Employee;
 use App\Jobs\sendAddingEmpsms;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EmployeeExports;
+use App\Jobs\NotifyUsers;
+use App\Notifications\UserNotification;
+use Illuminate\Support\Facades\Auth;
 class employeeController extends Controller
 {
     //
@@ -21,6 +24,8 @@ class employeeController extends Controller
             "address"=>$req->input("address")
         ]);
         sendAddingEmpsms::dispatch($employee);
+        $notification=new UserNotification(route("show_employee",$employee->id),"تمت اضافه الموظف من قبل ".Auth::user()->name,"EMPLOYEE_ADDED");
+        NotifyUsers::dispatch($notification);
         return redirect("/register/employee");
     }
     public function update(Request $req){

@@ -14,7 +14,7 @@ class UserNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct(public $link,public $text)
+    public function __construct(public $link,public $text,public $type)
     {
         //
     }
@@ -43,6 +43,7 @@ class UserNotification extends Notification
     {
         return [
             //
+            "type"=>$this->type,
             "text"=>$this->text,
             "link"=>$this->link
         ];
