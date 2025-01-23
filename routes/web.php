@@ -10,12 +10,9 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\positionControllers;
 use App\Http\Controllers\candidateController;
 use App\Http\Controllers\PermissionRolesController;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Mail;
 use App\Mail\employeeAdded;
 use Twilio\Rest\Client;
-=======
->>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
 Route::get('/', function () {
     return view('hr_mgr/login');
 });
@@ -31,6 +28,7 @@ Route::group(["prefix"=>"/Employee"],function(){
     Route::post("/sign/punishment",[punishmentController::class,"Register_punishment_perc"])->name("sign_punish_days");
     Route::post("/sign/punishment/fee",[punishmentController::class,"Register_punishment_perc"])->name("sign_punish_fee");
     Route::get("/page/{id}",[employeeController::class,"show"])->name("show_employee");
+    Route::get("/to/excel/export",[employeeController::class,"import"])->name("import_employee");
 });
 Route::group(["prefix"=>"/department"],function(){
     Route::get("/index",[DepartmentController::class,"index"])->name("department_index");
@@ -53,8 +51,5 @@ Route::group(["prefix"=>"permissions_roles"],function(){
 });
 Route::group(["prefix"=>"User"],function(){
     Route::get("/account",[HRController::class,"getUserPage"])->name("getUserPage");
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 2b0aed28a164977693e6a1d1110f0cdb44145deb
+
