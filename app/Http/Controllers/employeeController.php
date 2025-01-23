@@ -37,11 +37,17 @@ class employeeController extends Controller
             "email"=>$req->input("email"),
             "gender"=>$req->input("gender")
         ]);
+        $notification=new UserNotification(route("show_employee",Employee::find($req->input("id"))->id),"تمت التعديل الموظف من قبل ".Auth::user()->name,"ُEMPLOYEE_UPDATED");
+        NotifyUsers::dispatch($notification);
         return redirect("/register/employee");
 
     }
     public function delete(Request $req,$id){
+        $employee=Employee::find($id);
+        $notification=new UserNotification(route("employee_management"), "تمت عمليه حذف الموظف".$employee->name."من قبل الموظف ".Auth::user()->name,"EMPLOYEE_DELETED");
         Employee::destroy($id);
+
+        NotifyUsers::dispatch($notification);
         return redirect("/register/employee");
     }
     public function show(Request $req,$id){
