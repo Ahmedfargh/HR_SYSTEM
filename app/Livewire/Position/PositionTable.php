@@ -11,7 +11,7 @@ class PositionTable extends Component
 {
     use WithPagination;
     public $positions;
-    public $search_text;
+    public $search_text="";
     
     public function handleMessage($message){
         session()->flash('message', $message);
@@ -31,9 +31,10 @@ class PositionTable extends Component
     }
     public function render()
     {
-        $this->positions = Positions::with('department') ->where('title', 'like', '%' . $this->search_text . '%')->get();
+        //$this->positions = Positions::with('department') ->where('title', 'like', '%' . $this->search_text . '%')->paginate(5);
+        //dd(Positions::with('department'));
         return view('livewire.position.position-table',[
-            "positions"=> $this->positions,
+            "positions_"=> Positions::with('department')->paginate(5),
         ]);
     }
 }

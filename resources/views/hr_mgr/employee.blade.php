@@ -97,7 +97,10 @@
                                     </td>
                                 </thead>
                                 <tbody>
-                                    @foreach (App\Models\Employee::all()->toArray() as $emp)
+                                    @php
+                                       $employees=App\Models\Employee::paginate(5);; 
+                                    @endphp
+                                    @foreach ($employees as $emp)
                                     <tr>
                                         <td>
                                             {{ $emp['address'] }}
@@ -137,6 +140,8 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $employees->links("vendor.pagination.bootstrap-5") }}
+
                         </div>
                         @include('hr_mgr.parts.update_employee')
 

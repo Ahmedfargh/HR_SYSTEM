@@ -25,10 +25,14 @@ class DepartmentController extends Controller
     public function create(Request $req)
     {
         //
-        $dep=Department::create([
-            "name"=>$req->input("DepartmentName"),
+        $dep=new Department;
+        /*
+        "name"=>$req->input("DepartmentName"),
             "super_visisor"=>$req->input("employeeId"),
-        ]);
+        */
+        $dep->name=$req->input("DepartmentName");
+        $dep->super_visisor=$req->input("employeeId");
+        $dep->save();
         if($dep){
             return redirect()->route("department_index");
         }
@@ -57,11 +61,12 @@ class DepartmentController extends Controller
     public function edit(Request $req,$id)
     {
         //
-        Department::find($id)->update([
-            "name"=>$req->input("dep_name"),
-            "super_visisor"=>$req->input("super_visisor"),
-        ]);
-        return true;
+        
+       $deps= Department::find($id);
+       $deps->name=$req->input("dep_name");
+       $deps->super_visisor=$req->input("super_id");
+       $deps->save();
+       return true;
     }
 
     /**
