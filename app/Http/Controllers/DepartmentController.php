@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Department;
+use Exception;
 use Illuminate\Support\Facades\DB;
 class DepartmentController extends Controller
 {
@@ -50,9 +51,17 @@ class DepartmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request,int $id)
     {
         //
+        try{
+            $department=Department::findOr($id);
+            return view("hr_mgr.department",[
+                "department"=>$department
+            ]);
+        }catch(Exception $ex){
+            throw $ex;
+        }
     }
 
     /**

@@ -37,6 +37,9 @@
                     <button type="button" class="btn btn-danger" onclick="delete_department({{$dep->id}})"><i
                             class="fa-solid fa-trash"></i>
                         </button>
+                    <a class="btn btn-danger"href="{{route('department_page',$dep->id)}}"><i
+                            class="fa-solid fa-info"></i>
+                    </a>
                 </td>
 
             </tr>

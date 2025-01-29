@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Employee;
+use App\Models\worksIn;
 class Department extends Model
 {
     //
@@ -14,6 +15,9 @@ class Department extends Model
         "super_visisor"
     ];
     public function Manager(){
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class,"super_visisor","id");
+    }
+    public function WorksIn(){
+        return $this->hasOne(worksIn::class);
     }
 }

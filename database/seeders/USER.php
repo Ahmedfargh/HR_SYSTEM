@@ -14,10 +14,11 @@ class USER extends Seeder
     public function run(): void
     {
         //
-        DB::table("users")->insert([
+       /* DB::table("users")->insert([
             "name"=>"ahmed farghly thabet",
             "email"=>"ahmedgits2001@gmail.com",
             "password"=>\Hash::make("ahmedahmed"),
-        ]);
+            "personal_image"=>" "
+        ]);*/
     }
 }

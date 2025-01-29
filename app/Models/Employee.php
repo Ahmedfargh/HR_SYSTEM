@@ -29,4 +29,7 @@ class Employee extends Model
     public function PerformanceReport(){
         return $this->hasMany("App\Models\performance");
     }
+    public function WorksIn(){
+        return $this->hasOne(worksIn::class);
+    }
 }
