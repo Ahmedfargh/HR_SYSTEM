@@ -73,12 +73,21 @@
                 </div>
                 <div class="input-group col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-3">
                   <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">الاداره التى يعمل بها </span>
+                  </div>
+                  
+                  <input type="datetime" class="form-control" value="{{$employee->WorksIn?->first()->Department->name}}" name="department"
+                    placeholder="الاداره  " aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-3">
+                  <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">البريد الالكترونى</span>
                   </div>
                   <input type="email" class="form-control" value="{{$employee->email}}" name="email"
                     placeholder="تاريخ الانضمام " aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <input type="hidden" name="id" value="{{$employee->id}}">
+                
                 @csrf
                 <button class="btn btn-success col-4 ml-3" id="save_btn"><i class="fa-solid fa-upload"></i></button>
               </div>

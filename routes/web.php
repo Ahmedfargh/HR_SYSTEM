@@ -16,11 +16,10 @@ use Twilio\Rest\Client;
 Route::get('/', function () {
     return view('hr_mgr/login');
 });
-Route::post("/auth",[HRController::class,"Login"])->name("Log_url");
+Route::any("/auth",[HRController::class,"Login"])->name("Log_url");
 Route::get("/register/employee",function(){
     return view("hr_mgr.employee");
 })->name("employee_management");
-
 Route::group(["prefix"=>"/Employee"],function(){
     Route::post("/Register",[employeeController::class,"register"])->name("register_employee");
     Route::post("/Update",[employeeController::class,"update"])->name("update_employe");

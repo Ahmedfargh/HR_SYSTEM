@@ -29,6 +29,6 @@ class Employee extends Model
         return $this->hasMany("App\Models\performance");
     }
     public function WorksIn(){
-        return $this->hasOne(worksIn::class);
+        return $this->hasOne(worksIn::class,"employees_id","id");
     }
 }

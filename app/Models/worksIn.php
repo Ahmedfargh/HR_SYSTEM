@@ -14,7 +14,7 @@ class worksIn extends Model
         return $this->belongsToMany(Employee::class);
     }
     public function Department(){
-        return $this->belongsTo(Department::class);
+        return $this->belongsTo(Department::class,"departments_id","id");
     }
     
 }

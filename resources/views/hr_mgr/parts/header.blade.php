@@ -1,5 +1,5 @@
 <header class="main-header">
-        <a href="../../index2.html" class="logo">الموارد البشريه</a>
+        <a href="{{route('Log_url')}}" class="logo">الموارد البشريه</a>
         
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
