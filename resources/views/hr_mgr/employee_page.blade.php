@@ -100,6 +100,7 @@
 
             </div>
           </div>
+          <livewire:employees.assign-to-dep :employee="$employee"/>
           <div class="box col-12">
             <div class="box-body">
               <livewire:personals.reports :employee="$employee" />

@@ -8,8 +8,8 @@ use App\Models\Department;
 class worksIn extends Model
 {
     //
-    protected $table = 'role_has_permissions';
-    protected $fillable = ['permission_id','role_id'];
+    protected $table = 'works_in';
+    protected $fillable = ['employees_id','departments_id'];
     public function Employees(){
         return $this->belongsToMany(Employee::class);
     }
