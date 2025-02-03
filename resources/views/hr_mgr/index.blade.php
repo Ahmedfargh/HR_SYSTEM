@@ -22,9 +22,9 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="row container">
+        <div class="row conainer">
           @include('hr_mgr.parts.counter')
-
+          
         </div>
 
           <div class="box col-lg-12 col-md-12 col-xs-12 col-sm-12">

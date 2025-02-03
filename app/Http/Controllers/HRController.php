@@ -17,14 +17,22 @@ class HRController extends Controller
             return view("hr_mgr.index",[
                 "user"=>Auth::user(),
                 "employees"=>Employee::All(),
-                "attendance"=>DB::select("select  employees.* ,attendance.* from attendance join employees where DAY(attendance.check_in)=DAY(now()) and attendance.employee_id=employees.id ")
+                "attendance"=>DB::table('attendance')
+                ->join('employees', 'attendance.employee_id', '=', 'employees.id')
+                ->whereDay('attendance.check_in', '=', now()->day)
+                ->select('employees.*', 'attendance.*')
+                ->paginate(10)
             ]);
         }
         else if(Auth::attempt(['email' => $email, 'password' => $password])){
             return view("hr_mgr.index",[
                 "user"=>Auth::user(),
                 "employees"=>Employee::All(),
-                "attendance"=>DB::select("select  employees.* ,attendance.* from attendance join employees where DAY(attendance.check_in)=DAY(now()) and attendance.employee_id=employees.id ")
+                "attendance"=> DB::table('attendance')
+                ->join('employees', 'attendance.employee_id', '=', 'employees.id')
+                ->whereDay('attendance.check_in', '=', now()->day)
+                ->select('employees.*', 'attendance.*')
+                ->paginate(10)
             ]);
         }else{
             return view("hr_mgr.login");
