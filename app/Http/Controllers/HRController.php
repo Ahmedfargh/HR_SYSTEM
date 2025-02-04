@@ -41,5 +41,11 @@ class HRController extends Controller
     public function getUserPage(){
         return view("hr_mgr.HrAccount");
     }
+    public function assigNewPassaword(Request $req,$email){
+        return view("hr_mgr.ChangePassword",[
+            "email"=>$email
+        ]);
+
+    }
 
 }

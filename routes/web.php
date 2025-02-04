@@ -16,6 +16,10 @@ use Twilio\Rest\Client;
 Route::get('/', function () {
     return view('hr_mgr/login');
 });
+Route::get("/reset/password",function(){
+    return view("hr_mgr.ResetPassword");
+})->name("resetPassword");
+Route::get("/assign_passwored/{email}",[HRController::class,"assigNewPassaword"])->name("assignPassword");
 Route::any("/auth",[HRController::class,"Login"])->name("Log_url");
 Route::get("/register/employee",function(){
     return view("hr_mgr.employee");
