@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamp('read_at')->nullable();
             $table->timestamps();
         });
-        DB::select("CREATE TABLE emp_performance(id int not null auto_increment,employee_id int not null,percentage float not null, notes varchar(64000),created_at datetime default now(),updated_at datetime default now(),primary key(id),foreign key(employee_id) REFERENCES employees(id)on delete cascade on update cascade);");
+        DB::select("CREATE TABLE emp_performance(id int not null auto_increment,employee_id int not null,percentage float not null, notes text(64000),created_at datetime default now(),updated_at datetime default now(),primary key(id),foreign key(employee_id) REFERENCES employees(id)on delete cascade on update cascade);");
 
     }
 

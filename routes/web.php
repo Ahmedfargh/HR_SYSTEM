@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HRController;
@@ -10,6 +9,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\positionControllers;
 use App\Http\Controllers\candidateController;
 use App\Http\Controllers\PermissionRolesController;
+use App\Http\Controllers\GoogleAuthentication;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\employeeAdded;
 use Twilio\Rest\Client;
@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::get("/reset/password",function(){
     return view("hr_mgr.ResetPassword");
 })->name("resetPassword");
+Route::get("/google/auth",[GoogleAuthentication::class,"redirect"])->name("google_auth");
+Route::get("/auth/google/cal-back",[GoogleAuthentication::class,"CallBack"])->name("google_auth_callback");
 Route::get("/assign_passwored/{email}",[HRController::class,"assigNewPassaword"])->name("assignPassword");
 Route::any("/auth",[HRController::class,"Login"])->name("Log_url");
 Route::get("/register/employee",function(){
