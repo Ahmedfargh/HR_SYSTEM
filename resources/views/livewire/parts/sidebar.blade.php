@@ -4,7 +4,14 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image ">
-          <img src="{{asset(auth()->user()->personal_image)}}" class="img-circle d-block mx-auto" alt="{{auth()->user()->name}}" />
+          @if (auth()->user()->personal_image)
+          
+            <img src="{{asset(auth()->user()->personal_image)}}" class="img-circle d-block mx-auto" alt="{{auth()->user()->name}}" />
+          @else
+          
+            <img src="{{asset("dist\img\avatar5.png")}}" class="img-circle d-block mx-auto" alt="{{auth()->user()->name}}" />
+          @endif
+          
         </div>
         <div class="pull-left info">
           <p>{{auth()->user()->name}}</p>

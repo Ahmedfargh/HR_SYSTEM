@@ -70,6 +70,7 @@
                         </div>
 
                     </div>
+                    <livewire:employees.import-excel/>
                     <div class="col-12 card mb-2">
                         <div class="card-header">
                             <h3>الموظفيين</h3>

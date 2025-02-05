@@ -23,7 +23,9 @@
         "maatwebsite/excel": "^1.1",
         "meilisearch/meilisearch-php": "^1.12",
         "openspout/openspout": "^4.28",
+        "phpoffice/phpspreadsheet": "*",
         "spatie/laravel-permission": "^6.10",
+        "spatie/simple-excel": "*",
         "twilio/sdk": "^8.3",
         "vonage/client": "^4.1"
     },
